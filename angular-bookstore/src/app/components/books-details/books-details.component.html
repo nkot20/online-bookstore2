@@ -1,0 +1,48 @@
+<div class="row">
+
+    <div class="col-lg-3">
+
+        <br>
+        <app-book-category></app-book-category>
+
+    </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+        <br>
+        <div class="row">
+
+            <div class="col-12 col-md-4">
+                <div class="thumbnail">
+                    <img [src]="book.imageUrl" alt="" width="250" height="300">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <h3>{{book.name}}</h3>
+                <hr />
+
+                <p>{{book.description}} </p>
+                <hr />
+
+                <h4>Price: <strong>{{ book.unitPrice | currency: 'EUR':'symbol'}}</strong></h4>
+                <hr />
+
+                <h6>Qty. Available: {{book.unitsInStock}}</h6>
+                <hr />
+
+                <a class="btn btn-success" routerLink="/books">
+                    <i class="fas fa-arrow-left"></i> back
+                </a>
+                <button (click)="addToCart()" class="btn btn-primary" style="margin-left: 10px;">
+                    <i class="fas fa-cart-arrow-down"></i> Add to card
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->
